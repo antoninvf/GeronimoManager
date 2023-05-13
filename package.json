@@ -1,0 +1,18 @@
+{
+  "name": "geronimoupdater",
+  "version": "1.0.0",
+  "description": "Updater for modpacks made by Flowyan or Chutoy, for Family Man members.",
+  "main": "main.js",
+  "repository": "https://github.com/antoninvf/GeronimoUpdater",
+  "author": "Flowyan",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^24.3.0"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "jquery": "^3.7.0"
+  }
+}
