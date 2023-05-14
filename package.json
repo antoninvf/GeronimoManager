@@ -13,6 +13,8 @@
     "start": "electron ."
   },
   "dependencies": {
+    "find-process": "^1.4.7",
+    "fs-extra": "^11.1.1",
     "jquery": "^3.7.0"
   }
 }
