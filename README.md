@@ -13,3 +13,6 @@ First the app makes sure that Prism Launcher isn't running. If it is, it will sh
 6. Download the version and place it into instances
 7. Take files from old version (options.txt, servers.dat etc.) and copy them to the new one
 8. Done!
+
+### Disclaimer: I am not responsible if this deletes your files or damages your pc!
+Also this is my first time using Electron.
