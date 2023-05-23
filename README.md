@@ -1,6 +1,6 @@
-# GeronimoUpdater
+# Geronimo Manager
 
-Updater for modpacks made by Flowyan or Chutoy, for Family Man members.
+Updater and Manager for modpacks made by Flowyan or Chutoy, for Family Man members.
 
 ### Flow of the app:
 First the app makes sure that Prism Launcher isn't running. If it is, it will show a warning and close the app.
@@ -16,3 +16,5 @@ First the app makes sure that Prism Launcher isn't running. If it is, it will sh
 
 ### Disclaimer: I am not responsible if this deletes your files or damages your pc!
 Also this is my first time using Electron.
+
+![silly](https://media.tenor.com/KhtKI4EkuR0AAAAC/seal-silly.gif)
