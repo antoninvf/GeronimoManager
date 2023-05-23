@@ -17,4 +17,4 @@ First the app makes sure that Prism Launcher isn't running. If it is, it will sh
 ### Disclaimer: I am not responsible if this deletes your files or damages your pc!
 Also this is my first time using Electron.
 
-![silly](https://media.tenor.com/KhtKI4EkuR0AAAAC/seal-silly.gif)
+![silly](https://raw.githubusercontent.com/antoninvf/GeronimoManager/master/resources/img/blaaah.gif)
