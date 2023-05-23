@@ -9,13 +9,13 @@ contextBridge.exposeInMainWorld('electron', {
         return ipcRenderer.invoke('dialog', method, params);
     },
     env: process.env,
+    checkPathForInstances: (path) => ipcRenderer.invoke('checkPathForInstances', path),
+    checkInstancesForModpack: (param) => ipcRenderer.invoke('checkInstancesForModpack', param),
+    checkForUpdates: () => ipcRenderer.invoke('checkForUpdates'),
     prismLauncherExists: ipcRenderer.invoke('prismLauncherExists'),
-    prismLauncherRunning: ipcRenderer.invoke('prismLauncherRunning'),
-    prismRunningWarning: () => {
-        ipcRenderer.invoke('prismRunningWarning');
-        // close the app
-        ipcRenderer.invoke('close');
-    }
+    downloadModpack: (modpack, version, exists) => ipcRenderer.invoke('downloadModpack', modpack, version, exists),
+    messageBox: (options) => ipcRenderer.invoke('messageBox', options),
+    close: () => ipcRenderer.invoke('close'),
 });
 
 // Send versions over

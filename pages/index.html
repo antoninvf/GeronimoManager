@@ -3,50 +3,66 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-  <title>Geronimo Updater</title>
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; connect-src https://api.gangnamstyle.dev">
+  <title>Geronimo Manager</title>
   <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../styles/styles.css" />
 </head>
 
 <body>
-  <a href="../pages/info.html" class="position-absolute btn btn-outline-info bottom-0 end-0 m-3">Info</a>
+  <dialog data-modal>
+    <div class="d-flex flex-column align-items-center w-100 h-100 gap-3">
+      <h1>Please wait</h1>
+      <small>hold on, let it cook</small>
+      <div class="loader">
+        <div class="loaderBar"></div>
+      </div>
+      <div class="bg-black w-100 h-100 p-3 rounded">
+        <p class="hackerText" id="progressMessages"></p>
+      </div>
+    </div>
+  </dialog>
+  <a href="../pages/info.html" id="infoButton" class="position-absolute btn btn-info top-0 end-0 m-2">Info</a>
+  <button id="checkForUpdatesBtn" class="position-absolute btn btn-primary top-0 start-0 m-2">Check for updates</button>
 
   <div class="d-flex flex-column align-items-center">
     <div class="d-flex flex-column align-items-center w-75 vh-100">
-      <div class="d-flex gap-3 mt-5 mb-5 align-items-center">
-        <img src="../resources/img/geronimo.gif" class="rounded" height="64" width="64" alt="logo">
-        <h1>Geronimo Updater</h1>
+      <div class="d-flex gap-3 mt-5 pt-5 mb-5 align-items-center">
+        <img src="../resources/img/geronimo.gif" height="64" width="64" alt="logo">
+        <h1>Geronimo Manager</h1>
       </div>
 
-      <div class="d-flex flex-column gap-2 w-100">
-        <div class="border rounded p-2">
+      <div class="d-flex flex-column align-items-center gap-2 w-100 h-100">
+        <div class="border rounded p-2 w-100 bg-white">
           <p>Choose Prism Launcher directory:</p>
           <div class="d-flex align-items-center gap-2">
             <button class="border" id="chooseFolder">Choose Folder</button>
             <small id="folderChosen">No folder chosen</small>
           </div>
-          <small id="info">No folder chosen</small>
+          <small id="info"></small>
         </div>
-        <div class="border rounded p-2">
-          <label for="updateList">Choose modpack:</label>
+        <div class="border rounded p-2 w-100 bg-white">
+          <label for="modpackSelector">Choose modpack:</label>
           <div class="d-flex align-items-center gap-2">
-            <select class="w-50" name="updateList" id="updateList">
-              <option value="testpack">Testpack</option>
-              <option value="harrysucks">Harrysucks</option>
-              <option value="pokemonorigins">Pokemon + Origins + sex mod</option>
+            <select class="w-50" name="modpackSelector" id="modpackSelector">
+              <option hidden disabled selected value> -- select a modpack -- </option>
             </select>
           </div>
         </div>
-        <div class="border rounded p-2">
-          <label for="updateList">Choose version:</label>
+        <div class="border rounded p-2 w-100 bg-white">
+          <label for="modpackVersionSelector">Choose version:</label>
           <div class="d-flex align-items-center gap-2">
-            <select class="w-50" name="updateList" id="updateList">
-              <option value="testpackv2">Testpack v2</option>
-              <option value="testpackv1">Testpack v1</option>
-            </select>
+            <select class="w-50" name="modpackVersionSelector" id="modpackVersionSelector"></select>
           </div>
         </div>
+        <div class="border rounded p-2 w-100 bg-white">
+          <div class="d-flex align-items-center gap-2">
+            <small class="fw-bolder" id="instanceInfo">></small>
+          </div>
+        </div>
+        <button class="btn btn-success w-50 mt-auto mb-auto" id="downloadBtn">GERONIMO! (Download the modpack)</button>
+        <small class="text-center mt-auto mb-3 p-1 bg-black rounded w-100 text-danger">Current design looks shit, will update looks in a later update to look thousand times better.</small>
       </div>
     </div>
   </div>

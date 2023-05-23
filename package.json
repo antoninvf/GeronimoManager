@@ -1,20 +1,31 @@
 {
-  "name": "geronimoupdater",
+  "name": "geronimomanager",
+  "productName": "Geronimo Manager",
   "version": "1.0.0",
-  "description": "Updater for modpacks made by Flowyan or Chutoy, for Family Man members.",
+  "description": "Updater or Manager for modpacks made by Flowyan or Chutoy, for Family Man members.",
   "main": "main.js",
-  "repository": "https://github.com/antoninvf/GeronimoUpdater",
-  "author": "Flowyan",
+  "repository": "https://github.com/antoninvf/GeronimoManager",
+  "author": "Flowyan (antoninvf)",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^24.3.0"
+    "electron": "^24.3.0",
+    "electron-builder": "^23.6.0"
   },
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "portable": "electron-builder --win portable",
+    "dist": "electron-builder"
   },
   "dependencies": {
+    "decompress": "^4.2.1",
     "find-process": "^1.4.7",
-    "fs-extra": "^11.1.1",
-    "jquery": "^3.7.0"
+    "fs-extra": "^11.1.1"
+  },
+  "build": {
+    "appId": "antoninvf.geronimomanager",
+    "productName": "Geronimo Manager",
+    "portable": {
+      "artifactName": "${productName} v${version}.${ext}"
+    }
   }
 }
