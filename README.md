@@ -15,6 +15,6 @@ First the app makes sure that Prism Launcher isn't running. If it is, it will sh
 8. Done!
 
 ### Disclaimer: I am not responsible if this deletes your files or damages your pc!
-Also this is my first time using Electron.
-
 ![silly](https://raw.githubusercontent.com/antoninvf/GeronimoManager/master/resources/img/silly.gif)
+
+Also this is my first time using Electron.
